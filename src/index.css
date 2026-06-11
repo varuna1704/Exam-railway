@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Poppins:wght@700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-highlight: var(--highlight);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-bgDark: var(--bg-dark);
+  --color-bgLight: var(--bg-light);
+  --color-surface: var(--surface);
+  --color-storyAnswer: var(--story-answer);
+  --color-storyQuestion: var(--story-question);
+  --color-textPrimary: var(--text-primary);
+  --color-textMuted: var(--text-muted);
+  --color-border: var(--border);
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-story: 'Lora', serif;
+}
+
+:root {
+  --primary: #1A3C6E;       /* Indian Railways Navy Blue */
+  --accent: #FF6B00;        /* Safety Orange — signal color */
+  --highlight: #F5C518;     /* Gold — for answer highlights */
+  --success: #22C55E;       /* Correct answer green */
+  --danger: #EF4444;        /* Wrong answer red */
+  --bg-dark: #0F1B2D;       /* Night mode base */
+  --bg-light: #F4F7FB;      /* Day mode base */
+  --surface: #FFFFFF;
+  --story-answer: #FF6B00;   /* Bold orange for story highlights */
+  --story-question: #1A3C6E; /* Bold blue for question highlights in story */
+  --text-primary: #1C1C1E;
+  --text-muted: #6B7280;
+  --border: #E5E7EB;
+}
+
+:root.dark {
+  --primary: #3B82F6;       /* Brightened Navy/Blue for dark mode */
+  --accent: #FF8533;        /* Brightened Orange for dark mode */
+  --highlight: #FBBF24;     /* Lighter Gold */
+  --success: #4ADE80;
+  --danger: #F87171;
+  --bg-dark: #0B111E;
+  --bg-light: #0F172A;
+  --surface: #1E293B;
+  --story-answer: #FF8533;
+  --story-question: #60A5FA;
+  --text-primary: #F8FAFC;
+  --text-muted: #94A3B8;
+  --border: #334155;
+}
+
+@layer base {
+  body {
+    @apply bg-bgLight text-textPrimary font-sans transition-colors duration-200;
+  }
+}
+
+/* Print styles for syllabus */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .page-break {
+    page-break-after: always;
+  }
+}
+
+/* Flip card animation for quick revision tab */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
