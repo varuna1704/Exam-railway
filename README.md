@@ -38,6 +38,27 @@ Every subject (General Knowledge, Arithmetic, Science, Current Affairs, Reasonin
 
 ---
 
+## 🖼️ Application Screenshots
+
+### 1. Home Dashboard
+*The central hub to select subjects, view global stats, and access quick tools.*
+![Home Dashboard](public/screenshots/home.png)
+
+### 2. Interactive Syllabus & Print Outlines
+*Syllabus viewer with frequency stars and print-to-PDF generation capabilities.*
+![Syllabus Page](public/screenshots/syllabus.png)
+
+### 3. Timed Mock Test Engine
+*A live simulation of railway examinations with timer, navigations, and controls.*
+![Mock Test Engine](public/screenshots/mock-test.png)
+
+### 4. Detailed Results Scorecard
+*Detailed analytics, Recharts visualization, and train track progression animation.*
+![Results Scorecard](public/screenshots/scorecard.png)
+
+
+---
+
 ## 🛠️ Technology Stack & Dependencies
 
 - **Frontend core:** React 19 + TypeScript + Vite
